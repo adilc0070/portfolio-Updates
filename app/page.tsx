@@ -1,11 +1,12 @@
 'use client';
 export default function Home() {
   return (
-    <div className="flex flex-col items-center jstify-center">
-      <main className="">
-        {/* Profile Header at the top */}
-        {/* <ProfileHeader /> */}
-      </main>
-    </div>
+
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 ">
+          <b>Dock</b>
+          <b>Dock</b>
+          <b>Dock</b>
+          <b>Dock</b>
+        </div>
   );
 }

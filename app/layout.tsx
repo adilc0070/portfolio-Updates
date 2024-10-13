@@ -1,23 +1,13 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import type { Metadata } from "next"
+import { Montserrat } from 'next/font/google';
 import "./globals.css";
 import ProfileHeader from "@/components/header";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Adil C Web Developer",
   description: "Adil C Web Developer  MERN DJango Flutter ",
 };
+const inter = Montserrat({ subsets: ["latin"] ,display: "swap" });
 
 export default function RootLayout({
   children,
@@ -25,14 +15,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <header>
-        <ProfileHeader />
-        </header>
-        {children}
+    <html lang="en" className={inter.className}>
+      <body >
+
+        <ProfileHeader name="Adil C" description="Web developer" profileImage="/images/adilc.png" />
+
+        <div className="mt-3 border-2 rounded-lg">
+          <div className="flex flex-col items-center justify-center">
+            <main className="flex flex-col items-center justify-center w-full flex-1  text-center">
+              {children}
+            </main>
+
+          </div>
+        </div>
       </body>
     </html>
   );
