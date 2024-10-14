@@ -20,13 +20,8 @@ export default function RootLayout({
 
         <ProfileHeader name="Adil C" description="Web developer" profileImage="/images/adilc.png" />
 
-        <div className="mt-3 border-2 rounded-lg">
-          <div className="flex flex-col items-center justify-center">
-            <main className="flex flex-col items-center justify-center w-full flex-1  text-center">
-              {children}
-            </main>
-
-          </div>
+        <div className="mt-3 border-2 rounded-lg flex justify-center">
+          {children}
         </div>
       </body>
     </html>
