@@ -63,9 +63,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -73,6 +71,24 @@
   body {
     @apply bg-background text-foreground;
     padding: 8px;
-
   }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px; /* Adjust height for horizontal scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937; /* Gray background */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #f97316; /* Orange color for the thumb */
+  border-radius: 10px; /* Rounded thumb */
+  border: 2px solid #1f2937; /* Padding around thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #fb923c; /* Slightly brighter orange on hover */
 }
