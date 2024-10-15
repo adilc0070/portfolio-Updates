@@ -20,9 +20,9 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, description, image, ad
         >
             {/* Glass effect with unique animation */}
             <motion.div
-                className={`absolute inset-0 bg-LightBG bg-opacity-30 backdrop-blur-md transition-opacity duration-300`}
+                className={`absolute inset-0 bg-SecBG bg-opacity-30 backdrop-blur-md transition-opacity duration-300`}
                 style={{ zIndex: 1 }}
-                animate={{ opacity: isHovered ? 1 : 0.5 }} // Fade effect
+                animate={{ opacity: isHovered ? 1 : 0 }} // Fade effect
                 transition={{ duration: 0.3 }} // Smooth transition
             />
             <motion.div
@@ -32,10 +32,10 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, description, image, ad
                 transition={{ duration: 0.3 }} // Smooth transition
             >
                 <h1 className="text-lg md:text-2xl lg:text-3xl font-semibold text-Accent1">{title}</h1>
-                <p className="text-sm md:text-base lg:text-lg mt-2 text-Text">{description}</p>
+                <p className="text-sm md:text-base lg:text-lg mt-2 text-LightBG">{description}</p>
                 <hr className="mt-2 border border-LightBG" />
                 {address && (
-                    <div className="mt-2 font-semibold text-Text">
+                    <div className="mt-2 font-semibold text-Accent1">
                         {address.contact.Email && (
                             <div className="flex items-center mt-2">
                                 <FaRegEnvelope className="text-Accent1 mr-2" aria-label="Email" />
