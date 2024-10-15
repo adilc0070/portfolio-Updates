@@ -6,25 +6,31 @@ import { FaRegEnvelope } from '@react-icons/all-files/fa/FaRegEnvelope';
 import { FaPhoneAlt } from '@react-icons/all-files/fa/FaPhoneAlt';
 import { FaBirthdayCake } from '@react-icons/all-files/fa/FaBirthdayCake';
 import { FaHome } from '@react-icons/all-files/fa/FaHome';
-import { motion } from 'framer-motion'; // Import Framer Motion
+import { motion } from 'framer-motion';
 
 const ContentCard: React.FC<ContentCardProps> = ({ title, description, image, address }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
         <motion.div
-            className={`relative w-full text-Accent1 rounded-xl overflow-hidden transition-shadow duration-300 ${isHovered ? 'shadow-lg' : 'shadow-md'}`}
+            className={`relative w-full text-Accent1 rounded-xl overflow-hidden transition-shadow duration-300`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            whileHover={{ scale: 1.03 }} // Slight scale effect on hover
+            whileHover={{ scale: 1.05, rotate: 2 }} // Scale up and rotate slightly on hover
         >
-            {/* Glass effect */}
+            {/* Glass effect with unique animation */}
             <motion.div
-                className={`absolute inset-0 bg-LightBG bg-opacity-30 backdrop-blur-md transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+                className={`absolute inset-0 bg-LightBG bg-opacity-30 backdrop-blur-md transition-opacity duration-300`}
                 style={{ zIndex: 1 }}
-                animate={{ opacity: isHovered ? 1 : 0 }} // Fade effect
+                animate={{ opacity: isHovered ? 1 : 0.5 }} // Fade effect
+                transition={{ duration: 0.3 }} // Smooth transition
             />
-            <div className="cursor-none p-4 flex flex-col text-start relative z-20 rounded-xl">
+            <motion.div
+                className="cursor-none p-4 flex flex-col text-start relative z-20 rounded-xl"
+                initial={{ opacity: 0.8 }}
+                animate={{ opacity: isHovered ? 1 : 0.8 }} // Change opacity on hover
+                transition={{ duration: 0.3 }} // Smooth transition
+            >
                 <h1 className="text-lg md:text-2xl lg:text-3xl font-semibold text-Accent1">{title}</h1>
                 <p className="text-sm md:text-base lg:text-lg mt-2 text-Text">{description}</p>
                 <hr className="mt-2 border border-LightBG" />
@@ -56,7 +62,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, description, image, ad
                         )}
                     </div>
                 )}
-            </div>
+            </motion.div>
             {image && (
                 <div className="h-48 w-full relative">
                     <Image
