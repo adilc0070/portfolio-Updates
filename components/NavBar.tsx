@@ -21,7 +21,7 @@ const NavBar = () => {
 
     return (
         <nav className="bg-SecBG text-LightBG py-4 shadow-lg sticky top-0 z-50 mt-2 rounded-xl">
-            <div className="container mx-auto flex justify-between items-center px-4 max-w-5xl">
+            <div className="container mx-auto flex justify-between items-center px-4 max-w-7xl">
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none">
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

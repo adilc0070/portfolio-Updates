@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="max-w-5xl mx-auto h-full flex flex-col justify-center bg-mainBG">
+      <body className="max-w-7xl mx-auto h-full flex flex-col justify-center bg-mainBG">
         <ProfileHeader 
           name="Adil C" 
           description="Web developer" 
