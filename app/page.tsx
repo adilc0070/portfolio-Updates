@@ -1,4 +1,5 @@
 import ContentCard from "@/components/ContentCard";
+import UserProfile from "@/components/ProfileComponent";
 import { aboutSideData, introSideData } from "@/constatnds/data";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
         {/* First Row */}
         <div className="col-span-1">
           <ContentCard {...introSideData} />
+          
         </div>
         <div className="col-span-2 grid gap-2">
           <div className="row-span-1">
@@ -23,7 +25,7 @@ export default function Home() {
       <div className="grid grid-cols-3 gap-4 max-sm:grid-cols-1">
         {/* Second Row */}
         <div className="col-span-1">
-          <ContentCard {...introSideData} />
+        <UserProfile/>
         </div>
         <div className="col-span-1">
           <ContentCard {...introSideData} />
