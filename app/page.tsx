@@ -1,6 +1,8 @@
+import BlogComponent from "@/components/BlogComponent";
 import ContentCard from "@/components/ContentCard";
 import UserProfile from "@/components/ProfileComponent";
-import { aboutSideData, introSideData } from "@/constatnds/data";
+import ProjectComponent from "@/components/ProjectComponent";
+import { aboutSideData, introSideData, blogs, projects } from "@/constants/data";
 
 export default function Home() {
   return (
@@ -9,26 +11,30 @@ export default function Home() {
         {/* First Row */}
         <div className="col-span-1">
           <ContentCard {...introSideData} />
-          
         </div>
         <div className="col-span-2 grid gap-2">
-          <div className="row-span-1">
-            <ContentCard {...aboutSideData} />
-          </div>
-          <div className="row-span-2">
-            <ContentCard {...aboutSideData} />
-            <ContentCard {...aboutSideData} />
-          </div>
+          <ContentCard {...aboutSideData} />
+          {/* <div className="grid grid-cols-2 gap-2">
+            <div>
+              <BlogComponent blogs={blogs} />
+            </div>
+            <div>
+              <ProjectComponent projects={projects} />
+            </div>
+          </div> */}
         </div>
       </div>
 
       <div className="grid grid-cols-3 gap-4 max-sm:grid-cols-1">
         {/* Second Row */}
         <div className="col-span-1">
-        <UserProfile/>
+          <UserProfile />
         </div>
         <div className="col-span-1">
-          <ContentCard {...introSideData} />
+          <BlogComponent blogs={blogs} />
+        </div>
+        <div className="col-span-1">
+          <ProjectComponent projects={projects} />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ContentCardProps } from '@/constatnds/interfaces';
+import { ContentCardProps } from '@/constants/interfaces';
 import { FaRegEnvelope } from '@react-icons/all-files/fa/FaRegEnvelope';
 import { FaPhoneAlt } from '@react-icons/all-files/fa/FaPhoneAlt';
 import { FaBirthdayCake } from '@react-icons/all-files/fa/FaBirthdayCake';
