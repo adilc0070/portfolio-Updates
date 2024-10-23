@@ -81,9 +81,6 @@ I am passionate about transforming complex problems into elegant, intuitive code
 My background in Computer Applications and practical experience with a variety of projects enable me to bring a unique, personal touch to every endeavor. I am committed to capturing your message creatively and delivering results that exceed expectations. Having worked with renowned brands, I am well-versed in creating impactful web designs that enhance user experience and functionality.`,
 };
 
-
-
-
 export const blogs: Blog[] = [
   {
     id: 1,
@@ -102,9 +99,7 @@ export const blogs: Blog[] = [
   // Add more blog objects as needed
 ];
 
-
 // constansts/data.ts
-
 export const projects = [
   {
     title: 'Academicases - E-Learning Platform',
