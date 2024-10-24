@@ -85,5 +85,12 @@ const BlogComponent: React.FC<LastUploadedBlogProps> = ({ blogs }) => {
     </motion.div>
   );
 };
+    
+
+
+
+
+
+
 
 export default BlogComponent;
