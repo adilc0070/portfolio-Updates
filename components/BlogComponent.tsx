@@ -86,4 +86,4 @@ const BlogComponent: React.FC<LastUploadedBlogProps> = ({ blogs }) => {
   );
 };
     
-export default BlogComponent;
+export default BlogComponent; 
