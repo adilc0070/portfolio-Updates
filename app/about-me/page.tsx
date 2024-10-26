@@ -9,6 +9,9 @@ const AboutMePage = () => {
         <div className="col-span-2">
           <ContentCard {...introSideData} />
         </div>
+        <div className="col-span-1 bg-SecBG w-full h-full">
+
+        </div>
 
       </div>
     </div>
