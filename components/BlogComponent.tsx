@@ -2,7 +2,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link'; // Import Link from Next.js
+import Link from 'next/link';
 import { LastUploadedBlogProps } from '@/constants/interfaces';
 
 const BlogComponent: React.FC<LastUploadedBlogProps> = ({ blogs }) => {
@@ -29,7 +29,7 @@ const BlogComponent: React.FC<LastUploadedBlogProps> = ({ blogs }) => {
     }
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave: React.MouseEventHandler<HTMLDivElement> = () => {
     const id = setInterval(handleNext, 5000);
     setIntervalId(id);
   };
@@ -57,33 +57,35 @@ const BlogComponent: React.FC<LastUploadedBlogProps> = ({ blogs }) => {
         <h3 className="mt-4 text-lg md:text-2xl lg:text-3xl font-semibold text-Accent1">
           Last Uploaded Blog
         </h3>
-        <div className="mt-2 flex flex-col items-center">
-          {/* Blog Item */}
-          {blogs.length > 0 && (
-            <div className="mb-4 w-full">
-              <img src={blogs[currentIndex].image} alt={blogs[currentIndex].title} className="rounded-lg w-full h-48 object-cover" />
-              <h4 className="mt-2 text-lg font-semibold text-LightBG">{blogs[currentIndex].title}</h4>
-              <p className="text-sm text-LightBG">{blogs[currentIndex].description}</p>
-              <Link href={blogs[currentIndex].link} passHref className="mt-2 inline-block text-Accent1 bg-LightBG py-2 px-4 rounded-md hover:bg-Accent1/80 transition-colors">
-                View Blog
-              </Link>
-            </div>
-          )}
-        </div>
-        {/* Dots Navigation */}
-        <div className="absolute right-4 bottom-4 flex flex-col space-y-2">
-          {blogs.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full ${currentIndex === index ? 'bg-Accent1' : 'bg-LightBG'} transition-colors`}
-              aria-label={`Slide ${index + 1}`}
-            />
-          ))}
+        <div className="mt-2 flex flex-col justify-between h-96">
+          <div className="overflow-y-auto custom-scrollbar"> {/* Fixed height and scroll */}
+            {/* Blog Item */}
+            {blogs.length > 0 && (
+              <div className="mb-4 w-full">
+                <img src={blogs[currentIndex].image} alt={blogs[currentIndex].title} className="rounded-lg w-full h-48 object-cover" />
+                <h4 className="mt-2 text-lg font-semibold text-LightBG">{blogs[currentIndex].title}</h4>
+                <p className="text-sm text-LightBG">{blogs[currentIndex].description}</p>
+                <Link href={blogs[currentIndex].link} passHref className="mt-2 inline-block text-Accent1 bg-LightBG py-2 px-4 rounded-md hover:bg-Accent1/80 transition-colors">
+                  View Blog
+                </Link>
+              </div>
+            )}
+          </div>
+          {/* Dots Navigation */}
+          <div className="flex justify-center space-x-2">
+            {blogs.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full ${currentIndex === index ? 'bg-Accent1' : 'bg-LightBG'} transition-colors`}
+                aria-label={`Slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </motion.div>
     </motion.div>
   );
 };
-    
-export default BlogComponent; 
+
+export default BlogComponent;

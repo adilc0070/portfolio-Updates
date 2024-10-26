@@ -25,7 +25,7 @@ const UserProfile = () => {
         <h3 className="mt-4 text-lg md:text-2xl lg:text-3xl font-semibold text-Accent1">
           Connect with me:
         </h3>
-        <div className="flex flex-col mt-2">
+        <div className="flex flex-col mt-2 h-96 overflow-y-auto custom-scrollbar"> {/* Fixed height and scroll */}
           {accounts.map((account) => (
             <a
               key={account.platform}

@@ -34,24 +34,22 @@
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   height: 8px;
-  /* Adjust height for horizontal scrollbar */
+  width: 9px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #1f2937;
   /* Gray background */
+
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #f97316;
-  /* Orange color for the thumb */
+  scrollbar-width: thin;
   border-radius: 10px;
-  /* Rounded thumb */
   border: 2px solid #1f2937;
-  /* Padding around thumb */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: #fb923c;
-  /* Slightly brighter orange on hover */
 }

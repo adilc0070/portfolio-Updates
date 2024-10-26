@@ -57,31 +57,33 @@ const ProjectComponent: React.FC<LatestProjectsProps> = ({ projects }) => {
         <h3 className="mt-4 text-lg md:text-2xl lg:text-3xl font-semibold text-Accent1">
           Latest Projects
         </h3>
-        <div className="mt-2 flex flex-col items-center">
-          {/* Project Item */}
-          {projects.length > 0 && (
-            <div className="mb-4 w-full">
-              <img src={projects[currentIndex].image} alt={projects[currentIndex].title} className="rounded-lg w-full h-48 object-cover" />
-              <h4 className="mt-2 text-lg font-semibold text-LightBG">{projects[currentIndex].title}</h4>
-              <p className="text-sm text-LightBG">{projects[currentIndex].description}</p>
-              <Link href={projects[currentIndex].link} passHref>
-                <span className="mt-2 inline-block text-Accent1 bg-LightBG py-2 px-4 rounded-md hover:bg-Accent1/80 transition-colors">
-                  View Project
-                </span>
-              </Link>
-            </div>
-          )}
-        </div>
-        {/* Dots Navigation */}
-        <div className="absolute right-4 bottom-4 flex flex-col space-y-2">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full ${currentIndex === index ? 'bg-Accent1' : 'bg-LightBG'} transition-colors`}
-              aria-label={`Slide ${index + 1}`}
-            />
-          ))}
+        <div className="mt-2 flex flex-col justify-between h-96">
+          <div className="overflow-y-auto custom-scrollbar">
+            {/* Project Item */}
+            {projects.length > 0 && (
+              <div className="mb-4 w-full">
+                <img src={projects[currentIndex].image} alt={projects[currentIndex].title} className="rounded-lg w-full h-48 object-cover" />
+                <h4 className="mt-2 text-lg font-semibold text-LightBG">{projects[currentIndex].title}</h4>
+                <p className="text-sm text-LightBG">{projects[currentIndex].description}</p>
+                <Link href={projects[currentIndex].link} passHref>
+                  <span className="mt-2 inline-block text-Accent1 bg-LightBG py-2 px-4 rounded-md hover:bg-Accent1/80 transition-colors">
+                    View Project
+                  </span>
+                </Link>
+              </div>
+            )}
+          </div>
+          {/* Dots Navigation */}
+          <div className="flex justify-center space-x-2">
+            {projects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full ${currentIndex === index ? 'bg-Accent1' : 'bg-LightBG'} transition-colors`}
+                aria-label={`Slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </motion.div>
     </motion.div>

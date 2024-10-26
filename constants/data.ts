@@ -94,7 +94,10 @@ export const blogs: Blog[] = [
     title: 'Blog Two',
     link: '/blogs/2',
     image: '/images/adilc.png',
-    description: 'This is a brief description of blog two.',
+    description: `This is a brief description of blog two.brief description of
+     blog two.brief description of blog two.brief description of blog two.brief description
+      of blog two.brief description of blog two.brief description of blog two.brief d
+      escription of blog two. escription of blog two escription of blog twoescription of blog twoescription of blog twoescription of blog twoescription of blog twoescription of blog twoescription of blog twoescription of blog twoescription of blog twoescription of blog two`,
   },
   // Add more blog objects as needed
 ];
@@ -103,7 +106,7 @@ export const blogs: Blog[] = [
 export const projects = [
   {
     title: 'Academicases - E-Learning Platform',
-    description: 'A full-featured e-learning platform built with React, Node.js, and MongoDB.',
+    description: 'A full-featured A full-featured e-learning platform built with React, Node.js, and MongoDB.A full-featured e-learning platform built with React, Node.js, and MongoDB. e-learning platform built with React, Node.js, eatured A full-featured e-learning platform built with React, Node.js, and MongoDB.A full-featured e-learning platform built with React, Node.js, and MongoDB. e-learning platform built with React, Node.js, and MongoDB.',
     image: '/images/projects/academicases.png', // Update with your actual image paths
     link: '/projects/academicases', // Update with your actual project links
   },
