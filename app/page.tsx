@@ -14,14 +14,6 @@ export default function Home() {
         </div>
         <div className="col-span-2 grid gap-2">
           <ContentCard {...aboutSideData} />
-          {/* <div className="grid grid-cols-2 gap-2">
-            <div>
-              <BlogComponent blogs={blogs} />
-            </div>
-            <div>
-              <ProjectComponent projects={projects} />
-            </div>
-          </div> */}
         </div>
       </div>
 
