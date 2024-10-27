@@ -37,3 +37,7 @@ export interface LatestProjectsProps {
 }
 
 export type AboutMe = string[]
+
+export interface AboutMeCardProps {
+    aboutMe:AboutMe
+  }
