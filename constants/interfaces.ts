@@ -35,3 +35,5 @@ export interface Project {
 export interface LatestProjectsProps {
     projects: Project[];
 }
+
+export type AboutMe = string[]
