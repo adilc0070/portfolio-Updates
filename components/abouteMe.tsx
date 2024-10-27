@@ -8,20 +8,20 @@ const AboutMeCard: React.FC<AboutMeCardProps> = ({ aboutMe }) => {
 
   return (
     <motion.div
-      className={`relative w-full text-Accent1 rounded-xl overflow-hidden transition-shadow duration-300`}
+      className={`relative w-full  mx-auto text-Accent1 rounded-xl overflow-hidden transition-shadow duration-300 bg-mainBG shadow-lg`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ scale: 1.05, rotate: 2 }} // Scale up and rotate slightly on hover
+      whileHover={{ scale: 1.05 }} // Scale up slightly on hover
     >
       {/* Glass effect with unique animation */}
       <motion.div
-        className={`absolute inset-0 bg-SecBG bg-opacity-30 backdrop-blur-md transition-opacity duration-300`}
+        className={`absolute inset-0 bg-SecBG bg-opacity-40 backdrop-blur-md transition-opacity duration-300`}
         style={{ zIndex: 1 }}
         animate={{ opacity: isHovered ? 1 : 0 }} // Fade effect
         transition={{ duration: 0.3 }} // Smooth transition
       />
       <motion.div
-        className="cursor-none p-4 flex flex-col text-start relative z-20 rounded-xl"
+        className="cursor-none p-6 flex flex-col text-start relative z-20"
         initial={{ opacity: 0.8 }}
         animate={{ opacity: isHovered ? 1 : 0.8 }} // Change opacity on hover
         transition={{ duration: 0.3 }} // Smooth transition

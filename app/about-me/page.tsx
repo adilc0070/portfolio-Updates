@@ -19,7 +19,7 @@ const AboutMePage = () => {
         <div className="col-span-2">
           <AboutMeCard aboutMe={aboutMe} />
         </div>
-        <div className="col-span-1 bg-SecBG w-full h-full">
+        <div className="col-span-1">
           <JourneyCard careerJourney={careerJourney} education={education} />
 
         </div>
