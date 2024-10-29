@@ -27,7 +27,7 @@ const AboutMeCard: React.FC<AboutMeCardProps> = ({ aboutMe }) => {
         transition={{ duration: 0.3 }} // Smooth transition
       >
         {aboutMe.length > 0 ? (
-          aboutMe.map((item, index) => (
+          aboutMe.map((item, index) => (                 
             <p key={index} className="text-sm md:text-base lg:text-lg mt-2 text-LightBG">
               {item}
             </p>
