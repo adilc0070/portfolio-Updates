@@ -18,7 +18,7 @@ const AboutMeCard: React.FC<AboutMeCardProps> = ({ aboutMe }) => {
         className={`absolute inset-0 bg-SecBG bg-opacity-40 backdrop-blur-md transition-opacity duration-300`} 
         style={{ zIndex: 1 }}
         animate={{ opacity: isHovered ? 1 : 0 }} // Fade effect
-        transition={{ duration: 0.3 }} // Smooth transition
+        transition={{ duration: 0.3 }} // Smooth transition 
       />
       <motion.div
         className="cursor-none p-6 flex flex-col text-start relative z-20"
