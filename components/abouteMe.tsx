@@ -12,7 +12,7 @@ const AboutMeCard: React.FC<AboutMeCardProps> = ({ aboutMe }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{ scale: 1.05 }} // Scale up slightly on hover
-    >
+    > 
       {/* Glass effect with unique animation */}
       <motion.div
         className={`absolute inset-0 bg-SecBG bg-opacity-40 backdrop-blur-md transition-opacity duration-300`}
