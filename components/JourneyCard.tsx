@@ -1,11 +1,11 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 
 interface JourneyItem {
   title: string;
   description: string;
   date: string;
+  subItems?: JourneyItem[];  // Optional sub-items for a nested listing
 }
 
 interface JourneyCardProps {
@@ -14,59 +14,90 @@ interface JourneyCardProps {
 }
 
 const JourneyCard: React.FC<JourneyCardProps> = ({ careerJourney, education }) => {
-  const [isEducationView, setIsEducationView] = useState(false);
+  const [activeTab, setActiveTab] = useState<'career' | 'education'>('career');
 
-  const toggleView = () => {
-    setIsEducationView(!isEducationView);
+  const handleTabChange = (tab: 'career' | 'education') => {
+    setActiveTab(tab);
   };
 
-  const itemsToDisplay = isEducationView ? education : careerJourney;
+  const itemsToDisplay = activeTab === 'education' ? education : careerJourney;
 
   return (
-    <motion.div className="relative w-full max-w-lg mx-auto rounded-xl overflow-hidden transition-shadow duration-300 bg-mainBG shadow-lg">
-      {/* Background blur effect */}
-      <motion.div
-        className={`absolute inset-0 bg-SecBG bg-opacity-30 backdrop-blur-md`}
-        style={{ zIndex: 1 }}
-      />
-      <motion.div
-        className="relative p-6 z-10"
-        initial={{ opacity: 0.8 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      >
-        <h1 className="text-lg md:text-2xl lg:text-3xl font-semibold text-Accent1 mb-4">
-          {isEducationView ? 'Education' : 'Career Journey'}
-        </h1>
-        <button
-          onClick={toggleView}
-          className="mt-2 mb-4 px-4 py-2 text-white bg-Accent1 rounded-md hover:bg-Accent2 transition duration-300"
-        >
-          {isEducationView ? 'Show Career Journey' : 'Show Education'}
-        </button>
-        <div className="relative">
+    <div className="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden bg-SecBG shadow-lg">
+      {/* Background Blur */}
+      <div className="absolute inset-0 bg-SecBG bg-opacity-30 backdrop-blur-md" style={{ zIndex: 1 }} />
+
+      <div className="relative p-8 z-10">
+        {/* Title */}
+        <div className="mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-Accent1">
+            {activeTab === 'education' ? 'Your Educational Journey' : 'Career Milestones'}
+          </h1>
+          <p className="text-sm sm:text-base text-Text">Explore your career or education timeline.</p>
+        </div>
+
+        {/* Tab Navigation */}
+        <div className="flex sm:flex-col md:flex-row space-x-8 sm:space-x-0 sm:space-y-4 mb-6 border-b-2 border-Accent2">
+          <button
+            onClick={() => handleTabChange('career')}
+            className={`relative py-2 text-lg sm:text-xl font-medium text-Accent1 ${activeTab === 'career' ? 'border-b-4 border-Accent1 text-Accent1' : 'hover:text-Accent1'}`}
+          >
+            Career Journey
+            {activeTab === 'career' && <div className="absolute inset-x-0 bottom-0 h-1 bg-Accent1" />}
+          </button>
+          <button
+            onClick={() => handleTabChange('education')}
+            className={`relative py-2 text-lg sm:text-xl font-medium text-Accent1 ${activeTab === 'education' ? 'border-b-4 border-Accent1 text-Accent1' : 'hover:text-Accent1'}`}
+          >
+            Education
+            {activeTab === 'education' && <div className="absolute inset-x-0 bottom-0 h-1 bg-Accent1" />}
+          </button>
+        </div>
+
+        {/* Vertical Timeline with Multi-level Cards */}
+        <div className="relative max-h-[600px] overflow-y-auto custom-scrollbar">
           {itemsToDisplay.length > 0 ? (
-            <div className="relative">
-              <div className="absolute left-3 top-0 bottom-0 w-1 bg-Accent2 rounded-full" />
-              {itemsToDisplay.map((item, index) => (
-                <div key={index} className="mb-8 relative">
-                  <div className="flex items-start">
-                    <div className="w-5 h-5 rounded-full bg-Accent1 border-2 border-white shadow-md absolute -left-3 mt-1" />
-                    <div className="ml-8 bg-SecBG p-4 rounded-lg shadow-md border border-Accent2 transition-transform duration-300 hover:scale-105">
-                      <h2 className="font-semibold text-Accent1">{item.title}</h2>
-                      <p className="text-sm text-Text">{item.description}</p>
-                      <p className="text-xs text-Text italic">{item.date}</p>
-                    </div>
+            itemsToDisplay.map((item, index) => (
+              <div key={index} className="relative mb-8">
+                {/* Line Connector */}
+                {index > 0 && (
+                  <div className="absolute left-3 top-0 bottom-0 w-1 bg-Accent2 rounded-full" />
+                )}
+
+                {/* Timeline Card */}
+                <div className="flex sm:flex-col md:flex-row items-start space-x-6 sm:space-x-0 sm:space-y-4">
+                  <div className="w-8 h-8 bg-Accent1 text-white rounded-full flex items-center justify-center border-2 border-white shadow-md">
+                    <span className="text-sm font-semibold">{index + 1}</span>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="bg-SecBG p-6 rounded-lg shadow-md border border-Accent2 w-full">
+                    <h2 className="font-semibold text-Accent1">{item.title}</h2>
+                    <p className="text-sm sm:text-base text-Text mt-2">{item.description}</p>
+                    <p className="text-xs sm:text-sm text-Text italic mt-4">{item.date}</p>
+                    
+                    {/* Sub-items if available */}
+                    {item.subItems && item.subItems.length > 0 && (
+                      <div className="mt-4 pl-6 border-l-2 border-Accent2">
+                        {item.subItems.map((subItem, subIndex) => (
+                          <div key={subIndex} className="mb-4">
+                            <h3 className="font-semibold text-Accent1">{subItem.title}</h3>
+                            <p className="text-sm text-Text mt-2">{subItem.description}</p>
+                            <p className="text-xs text-Text italic mt-2">{subItem.date}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))
           ) : (
             <p className="text-sm text-Text">No information available.</p>
           )}
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 
