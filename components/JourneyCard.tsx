@@ -69,7 +69,7 @@ const JourneyCard: React.FC<JourneyCardProps> = ({ careerJourney, education }) =
                   <div className="w-8 h-8 bg-Accent1 text-white rounded-full flex items-center justify-center border-2 border-white shadow-md">
                     <span className="text-sm font-semibold">{index + 1}</span>
                   </div>
- 
+
                   {/* Card Content */}
                   <div className="bg-SecBG p-6 rounded-lg shadow-md border border-Accent2 w-full">
                     <h2 className="font-semibold text-Accent1">{item.title}</h2>
