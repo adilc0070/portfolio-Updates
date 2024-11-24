@@ -70,7 +70,7 @@ const JourneyCard: React.FC<JourneyCardProps> = ({ careerJourney, education }) =
                     <span className="text-sm font-semibold">{index + 1}</span>
                   </div>
 
-                  {/* Card Content */}
+                  {/* Card Content */} 
                   <div className="bg-SecBG p-6 rounded-lg shadow-md border border-Accent2 w-full">
                     <h2 className="font-semibold text-Accent1">{item.title}</h2>
                     <p className="text-sm sm:text-base text-Text mt-2">{item.description}</p>
