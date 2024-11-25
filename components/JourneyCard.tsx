@@ -102,3 +102,4 @@ const JourneyCard: React.FC<JourneyCardProps> = ({ careerJourney, education }) =
 };
 
 export default JourneyCard;
+ 
