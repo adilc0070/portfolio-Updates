@@ -21,7 +21,7 @@ const BlogComponent: React.FC<LastUploadedBlogProps> = ({ blogs }) => {
     return () => {
       clearInterval(id);
     };
-  }, []);
+  }, [])
 
   const handleMouseEnter = () => {
     if (intervalId) {
