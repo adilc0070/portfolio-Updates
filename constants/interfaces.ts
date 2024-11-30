@@ -39,5 +39,16 @@ export interface LatestProjectsProps {
 export type AboutMe = string[]
 
 export interface AboutMeCardProps {
-    aboutMe:AboutMe
-  }
+    aboutMe: AboutMe
+}
+export interface JourneyItem {
+    title: string;
+    description: string;
+    date: string;
+    subItems?: JourneyItem[];  // Optional sub-items for a nested listing
+}
+
+export interface JourneyCardProps {
+    careerJourney: JourneyItem[];
+    education: JourneyItem[];
+}

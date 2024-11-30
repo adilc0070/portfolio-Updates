@@ -1,17 +1,6 @@
 'use client';
+import { JourneyCardProps } from '@/constants/interfaces';
 import React, { useState } from 'react';
-
-interface JourneyItem {
-  title: string;
-  description: string;
-  date: string;
-  subItems?: JourneyItem[];  // Optional sub-items for a nested listing
-}
-
-interface JourneyCardProps {
-  careerJourney: JourneyItem[];
-  education: JourneyItem[];
-}
 
 const JourneyCard: React.FC<JourneyCardProps> = ({ careerJourney, education }) => {
   const [activeTab, setActiveTab] = useState<'career' | 'education'>('career');
