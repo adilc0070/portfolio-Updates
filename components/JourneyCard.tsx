@@ -76,7 +76,7 @@ const JourneyCard: React.FC<JourneyCardProps> = ({ careerJourney, education }) =
                           ))}
                         </div>
                       )}
-                    </div>
+                    </div> 
                   </div>
                 </div>
               ))
