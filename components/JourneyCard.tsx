@@ -88,6 +88,6 @@ const JourneyCard: React.FC<JourneyCardProps> = ({ careerJourney, education }) =
       </div>
     </div>
   );
-};
+}; 
 
 export default JourneyCard;
