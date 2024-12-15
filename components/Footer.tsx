@@ -4,7 +4,7 @@ import { accounts } from '@/constants/data'; // Import accounts from your data f
 
 const Footer = () => {
     return (
-        <footer className="bg-SecBG text-LightBG py-8 mt-10 shadow-lg"> 
+        <footer className="bg-SecBG text-LightBG py-8 mt-10 shadow-lg">
             <div className="container mx-auto flex flex-col items-center px-6 max-w-7xl">
                 <div className="text-center mb-6">
                     <h2 className="text-2xl font-bold mb-2">Let’s Connect</h2>
