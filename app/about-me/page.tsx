@@ -91,37 +91,42 @@ const AboutMePage = () => {
         <div className="col-span-1">
           <JourneyCard careerJourney={careerJourney} education={education} />
 
-          <div className="grid grid-rows-2 my-2 items-center gap-3">
-            <div className="shadow-2xl shadow-slate-400 rounded-2xl flex flex-col items-center justify-center w-full h-40 justify-self-center">services like carosal
-              <div>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-              </div>
-            </div>
-            <div className="grid rounded-2xl grid-cols-2 gap-3 justify-items-center items-center">
-              <div className="shadow-2xl shadow-slate-400 flex flex-col items-center justify-center w-40 h-40 rounded-xl">goals like carosal
-                <div>
-                  <div>1</div>
-                  <div>2</div>
-                  <div>3</div>
-                  <div>4</div>
-                  <div>5</div>
-                </div>
-              </div>
-              <div className="shadow-2xl shadow-slate-400 flex flex-col items-center justify-center w-40 h-40 rounded-xl">projects names like
-                <div>
-                  <div>1</div>
-                  <div>2</div>
-                  <div>3</div>
-                  <div>4</div>
-                  <div>5</div>
-                </div>
+          <div className="grid grid-rows-2 gap-4 mt-6">
+            {/* Services Section (with simple horizontal scroll) */}
+            <div className="shadow-2xl shadow-slate-400 rounded-2xl flex flex-col  w-full h-50 bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-4 overflow-x-auto">
+              <h3 className="text-xl font-semibold mb-4">Services</h3>
+              <div className="flex space-x-4 overflow-x-auto">
+                <div className="flex-shrink-0 bg-gray-800 text-white w-40 h-40 rounded-xl flex items-center justify-center">Service 1</div>
+                <div className="flex-shrink-0 bg-gray-800 text-white w-40 h-40 rounded-xl flex items-center justify-center">Service 2</div>
+                <div className="flex-shrink-0 bg-gray-800 text-white w-40 h-40 rounded-xl flex items-center justify-center">Service 3</div>
+                <div className="flex-shrink-0 bg-gray-800 text-white w-40 h-40 rounded-xl flex items-center justify-center">Service 4</div>
+                <div className="flex-shrink-0 bg-gray-800 text-white w-40 h-40 rounded-xl flex items-center justify-center">Service 5</div>
               </div>
             </div>
 
+            {/* Goals Section */}
+            <div className="grid grid-cols-2 gap-6 justify-items-center items-center">
+              <div className="shadow-2xl shadow-slate-400 flex flex-col items-center justify-center w-40 h-40 rounded-xl bg-gray-100">
+                <h4 className="font-semibold">Goal 1</h4>
+                <p className="text-sm">Description for Goal 1</p>
+              </div>
+              <div className="shadow-2xl shadow-slate-400 flex flex-col items-center justify-center w-40 h-40 rounded-xl bg-gray-100">
+                <h4 className="font-semibold">Goal 2</h4>
+                <p className="text-sm">Description for Goal 2</p>
+              </div>
+            </div>
+
+            {/* Projects Section */}
+            <div className="grid grid-cols-2 gap-2 justify-items-center items-center">
+              <div className="shadow-2xl shadow-slate-400 flex flex-col items-center justify-center w-40 h-40 rounded-xl bg-gray-200">
+                <h4 className="font-semibold">Project 1</h4>
+                <p className="text-sm">Description for Project 1</p>
+              </div>
+              <div className="shadow-2xl shadow-slate-400 flex flex-col items-center justify-center w-40 h-40 rounded-xl bg-gray-200">
+                <h4 className="font-semibold">Project 2</h4>
+                <p className="text-sm">Description for Project 2</p>
+              </div>
+            </div>
           </div>
 
         </div>
