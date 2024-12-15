@@ -92,10 +92,34 @@ const AboutMePage = () => {
           <JourneyCard careerJourney={careerJourney} education={education} />
 
           <div className="grid grid-rows-2 my-2 items-center gap-3">
-            <div className="shadow-2xl shadow-slate-400  rounded-2xl flex items-center justify-center w-full h-40 justify-self-center">services like carosal </div>
+            <div className="shadow-2xl shadow-slate-400 rounded-2xl flex flex-col items-center justify-center w-full h-40 justify-self-center">services like carosal
+              <div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+              </div>
+            </div>
             <div className="grid rounded-2xl grid-cols-2 gap-3 justify-items-center items-center">
-              <div className="shadow-2xl shadow-slate-400 flex items-center justify-center w-40 h-40 rounded-xl">goals</div>
-              <div className="shadow-2xl shadow-slate-400 flex items-center justify-center w-40 h-40 rounded-xl"> </div>
+              <div className="shadow-2xl shadow-slate-400 flex flex-col items-center justify-center w-40 h-40 rounded-xl">goals like carosal
+                <div>
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+                  <div>4</div>
+                  <div>5</div>
+                </div>
+              </div>
+              <div className="shadow-2xl shadow-slate-400 flex flex-col items-center justify-center w-40 h-40 rounded-xl">projects names like
+                <div>
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+                  <div>4</div>
+                  <div>5</div>
+                </div>
+              </div>
             </div>
 
           </div>
