@@ -91,15 +91,13 @@ const AboutMePage = () => {
         <div className="col-span-1">
           <JourneyCard careerJourney={careerJourney} education={education} />
 
-          <div className="grid grid-rows-2 my-2 bg-slate-600 items-center">
-            <div className="bg-red-500 grid grid-cols-2 gap-3 justify-items-center items-center">
-              <div className="bg-green-400 flex items-center justify-center w-40 h-40 rounded-xl">1</div>
-              <div className="bg-green-400 flex items-center justify-center w-40 h-40 rounded-xl">1</div>
-              <div className="bg-green-400 flex items-center justify-center w-40 h-40 rounded-xl">1</div>
-              <div className="bg-green-400 flex items-center justify-center w-40 h-40 rounded-xl">1</div>
+          <div className="grid grid-rows-2 my-2 items-center gap-3">
+            <div className="shadow-2xl shadow-slate-400  rounded-2xl flex items-center justify-center w-full h-40 justify-self-center">services like carosal </div>
+            <div className="grid rounded-2xl grid-cols-2 gap-3 justify-items-center items-center">
+              <div className="shadow-2xl shadow-slate-400 flex items-center justify-center w-40 h-40 rounded-xl">goals</div>
+              <div className="shadow-2xl shadow-slate-400 flex items-center justify-center w-40 h-40 rounded-xl"> </div>
             </div>
 
-            <div className="bg-green-400 flex items-center justify-center w-full h-40 justify-self-center">2ads</div>
           </div>
 
         </div>
