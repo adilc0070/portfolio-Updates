@@ -102,7 +102,7 @@ const AboutMePage = () => {
                 <div className="flex-shrink-0 bg-gray-800 text-white w-40 h-40 rounded-xl flex items-center justify-center">Service 4</div>
                 <div className="flex-shrink-0 bg-gray-800 text-white w-40 h-40 rounded-xl flex items-center justify-center">Service 5</div>
               </div>
-            </div>
+            </div> 
 
             {/* Goals Section */}
             <div className="grid grid-cols-2 gap-6 justify-items-center items-center">
